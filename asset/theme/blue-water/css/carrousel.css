@@ -1,0 +1,99 @@
+#slider-banner{
+margin:0px auto;
+width:972px;
+font-size:11px;
+font-weight:bold;
+}
+#wrap{
+    width: 970;
+    margin: 0px auto;
+    padding: 0px 0px 0px 0px;
+	border-bottom:1px solid #0080E3;
+	border-left:1px solid #0080E3;
+	border-right:1px solid #0080E3;
+	-moz-border-radius: 0px 0px 8px 8px; 
+	-webkit-border-radius: 0px 0px 8px 8px; 
+	z-index: 6666669 ;
+	background-image:url(../images/bg-shadow-slider-carrousel.jpg);
+	background-repeat:repeat-x;
+	background-position:top;
+}
+
+#hs img { 
+    border: 1px solid #ccc;
+	padding:3px;
+    height: 80px;
+}
+#hs li {
+    float: left;
+    background: transparent url(../images/load-indicator.gif) 50% 50% no-repeat;
+    border: 0px solid #f1f8fb;
+    cursor: pointer;
+	height:130px;
+	text-align:center;
+}
+#hs a { 
+    border: 0px;
+	text-decoration:none;
+	color:#026FA8;
+	text-shadow:1px 1px #eee;
+}
+.jcarousel-skin-tango-hs .jcarousel-container {
+    border: 0px solid #f5989d;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px; 
+}
+
+.jcarousel-skin-tango-hs .jcarousel-container-horizontal {
+    width: 90%;
+    padding: 0px 50px 0px 50px;
+}
+
+.jcarousel-skin-tango-hs .jcarousel-clip-horizontal {
+    width: 100%;
+    height: 145px; 
+}
+
+.jcarousel-skin-tango-hs .jcarousel-item {
+    margin: 10px;    
+}
+
+.jcarousel-skin-tango-hs .jcarousel-item-horizontal { height: 100px; }
+
+.jcarousel-skin-tango-hs .jcarousel-item-placeholder {
+    background: #FFFFFF;
+    color: #FFFFFF;
+}
+
+.jcarousel-skin-tango-hs .jcarousel-next-horizontal {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    width: 30px;
+    height: 100%;
+    cursor: pointer;
+    background: transparent url(../images/arrow-slider-right.png) no-repeat 0 0;
+}
+
+
+.jcarousel-skin-tango-hs .jcarousel-next-disabled-horizontal,
+.jcarousel-skin-tango-hs .jcarousel-next-disabled-horizontal:hover,
+.jcarousel-skin-tango-hs .jcarousel-next-disabled-horizontal:active {
+    cursor: default;
+}
+
+.jcarousel-skin-tango-hs .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    width: 30px;
+    height: 100%;
+    cursor: pointer;
+    background: transparent url(../images/arrow-slider-left.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-tango-hs .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin-tango-hs .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin-tango-hs .jcarousel-prev-disabled-horizontal:active {
+    cursor: default;
+}

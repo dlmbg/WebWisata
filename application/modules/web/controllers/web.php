@@ -1,0 +1,96 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class web extends CI_Controller {
+
+	/**
+	 * @author : Gede Lumbung
+	 * @web : http://gedelumbung.com
+	 **/
+
+	function index()
+	{
+		$d['menu_top'] = $this->app_global_web_model->generate_menu($parent=0,$hasil=''," id='treemenu1'");
+		$d['menu_bottom'] = $this->app_global_web_model->generate_menu($parent=0,$hasil='');
+		$d['last_update'] = $this->app_global_forum->generate_index_last_update($GLOBALS['site_limit_small']);
+		$d['news_update'] = $this->app_global_forum->generate_index_new_update($GLOBALS['site_limit_small']);
+
+		$d["browser"] = $this->agent->browser().' '.$this->agent->version();
+		$d["os"] = $this->agent->platform();
+
+		$d["counter_pengunjung"] = $this->db->get("tbl_counter")->num_rows();
+		setcookie("pengunjung", "sudah berkunjung", time() + 900 * 24);
+		if (!isset($_COOKIE["pengunjung"])) {
+			$d_in['ip_address'] = $_SERVER['REMOTE_ADDR'];
+			$d_in['tanggal'] = gmdate("d-M-Y H:i:s",time()+3600*9);
+			$this->db->insert("tbl_counter",$d_in);
+		}
+		
+		$this->breadcrumb->append_crumb('Home', base_url());
+		$this->breadcrumb->append_crumb('Selamat Datang di Website Resmi Pariwisata Kabupaten Flores Timur', '/');
+
+		$d['kunjungan'] = $this->db->query("SELECT nama_hotel, id_hotel, (select count(id_hotel) as hasil from dlmbg_kunjungan where id_hotel=a.id_hotel) as hasil FROM `dlmbg_hotel` a order by hasil DESC LIMIT 5");
+		
+		
+ 		$this->load->view($GLOBALS['site_theme'].'/web/bg_header',$d);
+ 		$this->load->view($GLOBALS['site_theme'].'/web/bg_left');
+ 		$this->load->view($GLOBALS['site_theme'].'/web/bg_home');
+ 		$this->load->view($GLOBALS['site_theme'].'/web/bg_right');
+ 		$this->load->view($GLOBALS['site_theme'].'/web/bg_footer');
+	}
+ 
+   public function pages($id_pages)
+   {
+      $where['id_menu'] = $id_pages;
+      $get_data = $this->db->get_where("dlmbg_menu",$where);
+      if($get_data->num_rows()>0)
+      {
+      		$h = $get_data->row();
+      		if($h->url_route=="")
+      		{
+				if($h->jenis=="kategori")
+				{
+					redirect(base_url()."web/produk/kategori/".$h->id_menu."/".url_title(strtolower($h->menu))."");
+				}
+				else
+				{
+					$this->breadcrumb->append_crumb('Home', base_url());
+					$this->breadcrumb->append_crumb($h->menu, '/');
+					$d['title'] = $h->menu;
+					$d['content'] = $h->content;
+	
+					$d['menu_top'] = $this->app_global_web_model->generate_menu($parent=0,$hasil=''," id='treemenu1'");
+					$d['menu_bottom'] = $this->app_global_web_model->generate_menu($parent=0,$hasil='');
+					
+
+					$d["browser"] = $this->agent->browser().' '.$this->agent->version();
+					$d["os"] = $this->agent->platform();
+
+					$d["counter_pengunjung"] = $this->db->get("tbl_counter")->num_rows();
+					setcookie("pengunjung", "sudah berkunjung", time() + 900 * 24);
+					if (!isset($_COOKIE["pengunjung"])) {
+						$d_in['ip_address'] = $_SERVER['REMOTE_ADDR'];
+						$d_in['tanggal'] = gmdate("d-M-Y H:i:s",time()+3600*9);
+						$this->db->insert("tbl_counter",$d_in);
+					}
+
+
+					$d['kunjungan'] = $this->db->query("SELECT nama_hotel, id_hotel, (select count(id_hotel) as hasil from dlmbg_kunjungan where id_hotel=a.id_hotel) as hasil FROM `dlmbg_hotel` a order by hasil DESC LIMIT 5");
+					
+			 		$this->load->view($GLOBALS['site_theme'].'/web/bg_header',$d);
+			 		$this->load->view($GLOBALS['site_theme'].'/web/bg_left');
+			 		$this->load->view($GLOBALS['site_theme'].'/web/pages/bg_home');
+			 		$this->load->view($GLOBALS['site_theme'].'/web/bg_right');
+			 		$this->load->view($GLOBALS['site_theme'].'/web/bg_footer');
+				}
+      		}
+      		else
+      		{	
+      			redirect($h->url_route);
+      		}
+      }
+      else
+      {
+	      	redirect(base_url());
+      }
+   }
+}

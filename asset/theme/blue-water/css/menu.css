@@ -1,0 +1,31 @@
+/*Menu*/
+.suckertreemenu ul{ margin:0; padding: 10px; list-style-type: none; z-index:110;}
+.suckertreemenu ul li{ position: relative; display: inline; float: left; border-left:1px solid #0993C1;}
+.suckertreemenu ul li a{ display: block; text-decoration: none; color:#fff; padding:10px 13px 14px 13px;}
+.suckertreemenu ul li ul{ left: 0; position: absolute; display: block; visibility: hidden;}
+.suckertreemenu ul li ul li{ display: list-item; float: none;}
+.suckertreemenu ul li ul li a{ display: block; width: 120px; color: text-decoration: none; padding: 10px 15px; background-color:#016FA2; border-bottom:1px solid #0993C1; text-align:left; }
+
+.suckertreemenu ul li ul li ul{ top:0; border-style:none; margin:0px;}
+
+.suckertreemenu ul li a:hover{ color: #FFFF00;}
+* html p#iepara{}
+	
+* html .suckertreemenu ul li { float: left; height: 1%; }
+* html .suckertreemenu ul li a { height: 1%; }
+
+/*Menu*/
+.suckertreemenu2 ul{ margin:0; padding: 10px; list-style-type: none; z-index:110;}
+
+.suckertreemenu2 ul li{ position: relative; display: inline; float: left; border-left:1px solid #ddd;}
+	.suckertreemenu2 ul li a{ display: block; text-decoration: none; color:#fff; padding:10px 13px 14px 13px; text-transform:uppercase;}
+.suckertreemenu2 ul li ul{ left: 0; position: absolute; display: block; visibility: hidden;}
+.suckertreemenu2 ul li ul li{ display: list-item; float: none;}
+.suckertreemenu2 ul li ul li ul{ top:0; border-style:none; margin:0px;}
+
+.suckertreemenu2 ul li ul li a{ display: block; width: 120px; color: text-decoration: none; padding: 10px 15px; background-color:#016FA2; border-bottom:1px solid #0993C1; text-align:left; }
+.suckertreemenu2 ul li a:hover{ color: #FFFF00;}
+* html p#iepara{}
+	
+* html .suckertreemenu2 ul li { float: left; height: 1%; }
+* html .suckertreemenu2 ul li a { height: 1%; }

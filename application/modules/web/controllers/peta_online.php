@@ -1,0 +1,70 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class peta_online extends CI_Controller {
+
+	/**
+	 * Controller peta_online
+	 * by Gede Lumbung
+	 * http://gedelumbung.com
+	 */
+	 
+	function index($uri=0)
+	{
+		$d['menu_top'] = $this->app_global_web_model->generate_menu($parent=0,$hasil=''," id='treemenu1'");
+		$d['menu_bottom'] = $this->app_global_web_model->generate_menu($parent=0,$hasil='');
+
+		$d["browser"] = $this->agent->browser().' '.$this->agent->version();
+		$d["os"] = $this->agent->platform();
+
+		$d["counter_pengunjung"] = $this->db->get("tbl_counter")->num_rows();
+		setcookie("pengunjung", "sudah berkunjung", time() + 900 * 24);
+		if (!isset($_COOKIE["pengunjung"])) {
+			$d_in['ip_address'] = $_SERVER['REMOTE_ADDR'];
+			$d_in['tanggal'] = gmdate("d-M-Y H:i:s",time()+3600*9);
+			$this->db->insert("tbl_counter",$d_in);
+		}
+		
+		$this->breadcrumb->append_crumb('Home', base_url());
+		$this->breadcrumb->append_crumb('Hotel',  base_url());
+
+		$d['kunjungan'] = $this->db->query("SELECT nama_hotel, id_hotel, (select count(id_hotel) as hasil from dlmbg_kunjungan where id_hotel=a.id_hotel) as hasil FROM `dlmbg_hotel` a order by hasil DESC LIMIT 5");
+		
+		
+ 		$this->load->view($GLOBALS['site_theme'].'/web/peta_online/bg_header',$d);
+ 		$this->load->view($GLOBALS['site_theme'].'/web/peta_online/bg_home');
+ 		$this->load->view($GLOBALS['site_theme'].'/web/peta_online/bg_footer');
+	}
+	 
+	public function ambil_data($akhir)
+	{
+		if($akhir==1){
+		    $query = "SELECT * FROM dlmbg_peta_online a left join dlmbg_kelurahan b on a.id_kelurahan=b.id_kelurahan ORDER BY a.id_peta_online DESC LIMIT 1";
+		}else{
+		    $query = "SELECT * FROM dlmbg_peta_online a left join dlmbg_kelurahan b on a.id_kelurahan=b.id_kelurahan ";
+		}
+		$data['peta'] = $this->db->query($query);
+
+		$json = '{"wilayah": {';
+		$json .= '"petak":[ ';
+		foreach($data['peta']->result_array() as $x){
+		    $json .= '{';
+		    $json .= '"id":"'.$x['id_peta_online'].'",
+		        "judul":"'.htmlspecialchars($x['judul']).'",
+		        "subjudul":"'.htmlspecialchars($x['jenis']).'",
+		        "deskripsi":"'.htmlspecialchars($x['keterangan']).'",
+		        "kelurahan":"'.$x['kelurahan'].'",
+		        "x":"'.$x['lat'].'",
+		        "y":"'.$x['lang'].'",
+		        "jenis":"'.$x['jenis'].'"
+		    },';
+		}
+		$json = substr($json,0,strlen($json)-1);
+		$json .= ']';
+
+		$json .= '}}';
+		echo $json;
+	}
+}
+
+/* End of file peta_online.php */
+/* Location: ./application/controllers/peta_online.php */
