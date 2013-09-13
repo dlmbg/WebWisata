@@ -20,40 +20,32 @@
 	
 	<div class="content clearfix">
 		
-		<?php echo form_open("login/act"); ?>
-		
 			<h1><?php echo $GLOBALS['site_title']; ?></h1>		
 			
-			<div class="login-fields">
-				
-				<p>Enter your username & password to access Dashboard</p>
-				
-				<p><?php echo $this->session->flashdata("result_login"); ?>
-				
-				<div class="field">
-					<label for="username">Username:</label>
-					<input type="text" id="username" name="username" value="" placeholder="Username..." class="login username-field" required />
-				</div> <!-- /field -->
-				
-				<div class="field">
-					<label for="password">Password:</label>
-					<input type="password" id="password" name="password" value="" placeholder="Password..." class="login password-field" required />
-				</div> <!-- /password -->
-				
-				
-			</div> <!-- /login-fields -->
+			<div class="well">
+			<?php echo form_open_multipart("login/act_register"); ?>
 			
-			<div class="login-actions">
-									
-				<input type="submit" class="button btn btn-warning btn-large" value="Sign In"> 
-				<input type="reset" class="button btn btn-default btn-large" value="Reset">
-
-				or <a href="<?php echo base_url(); ?>login/register" class="button btn btn-danger">Register</a>
-				
-			</div>
+			<label for="menu">Nama</label>
+			<div class="cleaner_h5"></div>
+			<input type="search" style="width:90%;" id="nama_user" name="nama_user" placeholder="Nama User" required />
+			<div class="cleaner_h10"></div>
+			
+			<label for="menu">Username</label>
+			<div class="cleaner_h5"></div>
+			<input type="search" style="width:90%;" id="username" name="username" placeholder="Username" required />
+			<div class="cleaner_h10"></div>
+			
+			<label for="menu">Password</label>
+			<div class="cleaner_h5"></div>
+			<input type="password" style="width:90%;" id="password" name="password" placeholder="Password" required />
+			<div class="cleaner_h10"></div>
+			
+			<div class="cleaner_h10"></div>
+			<input type="submit" class="btn btn-info" value="SIMPAN" />
+			<?php echo form_close(); ?>
+		</div>
 				<p align="center"><?php echo $GLOBALS['site_footer']; ?></p>
 			
-		<?php echo form_close(); ?>
 		
 	</div> <!-- /content -->
 	

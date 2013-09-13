@@ -30,11 +30,10 @@ class kunjungan_hotel extends CI_Controller {
 		{
 			$d['hotel'] = $this->db->get("dlmbg_hotel");
 			$d['id_hotel'] = "";
-			$d['tanggal'] = "";
-			$d['asal'] = "";
-			$d['jk'] = "";
-			$d['total'] = "";
-			$d['lama_inap'] = "";
+			$d['bulan'] = "";
+			$d['tahun'] = "";
+			$d['pria'] = "";
+			$d['wanita'] = "";
 			
 			$d['id_param'] = "";
 			$d['tipe'] = "tambah";
@@ -59,11 +58,10 @@ class kunjungan_hotel extends CI_Controller {
 			$get = $this->db->get_where("dlmbg_kunjungan",$where)->row();
 			
 			$d['id_hotel'] = $get->id_hotel;
-			$d['tanggal'] = $get->tanggal;
-			$d['asal'] = $get->asal;
-			$d['jk'] = $get->jk;
-			$d['total'] = $get->total;
-			$d['lama_inap'] = $get->lama_inap;
+			$d['bulan'] = $get->bulan;
+			$d['tahun'] = $get->tahun;
+			$d['pria'] = $get->pria;
+			$d['wanita'] = $get->wanita;
 			
 			$d['id_param'] = $get->id_kunjungan;
 			$d['tipe'] = "edit";
@@ -88,22 +86,20 @@ class kunjungan_hotel extends CI_Controller {
 			if($tipe=="tambah")
 			{
 				$in['id_hotel'] = $this->input->post("id_hotel");
-				$in['tanggal'] = $this->input->post("tanggal");
-				$in['asal'] = $this->input->post("asal");
-				$in['jk'] = $this->input->post("jk");
-				$in['total'] = $this->input->post("total");
-				$in['lama_inap'] = $this->input->post("lama_inap");
+				$in['bulan'] = $this->input->post("bulan");
+				$in['tahun'] = $this->input->post("tahun");
+				$in['pria'] = $this->input->post("pria");
+				$in['wanita'] = $this->input->post("wanita");
 				$this->db->insert("dlmbg_kunjungan",$in);
 				
 			}
 			else if($tipe=="edit")
 			{
 				$in['id_hotel'] = $this->input->post("id_hotel");
-				$in['tanggal'] = $this->input->post("tanggal");
-				$in['asal'] = $this->input->post("asal");
-				$in['jk'] = $this->input->post("jk");
-				$in['total'] = $this->input->post("total");
-				$in['lama_inap'] = $this->input->post("lama_inap");
+				$in['bulan'] = $this->input->post("bulan");
+				$in['tahun'] = $this->input->post("tahun");
+				$in['pria'] = $this->input->post("pria");
+				$in['wanita'] = $this->input->post("wanita");
 				$this->db->update("dlmbg_kunjungan",$in,$id);
 			}
 			

@@ -18,10 +18,11 @@ float: left;
 .suckertreemenu ul li a{
 display: block;
 font-weight:bold;
-padding: 12px 15px;
+padding: 12px 12px;
 font-size:11px;
 text-decoration: none;
 color:#000;
+border-right: 1px solid #ccc;
 }
 
 /*1st sub level menu*/

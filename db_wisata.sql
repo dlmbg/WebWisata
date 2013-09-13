@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Waktu pembuatan: 28. Juli 2013 jam 13:19
--- Versi Server: 5.1.44
--- Versi PHP: 5.3.1
+-- Generation Time: Sep 13, 2013 at 06:26 PM
+-- Server version: 5.1.44
+-- PHP Version: 5.3.1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -22,7 +22,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `captcha`
+-- Table structure for table `captcha`
 --
 
 CREATE TABLE IF NOT EXISTS `captcha` (
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `captcha` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=135 ;
 
 --
--- Dumping data untuk tabel `captcha`
+-- Dumping data for table `captcha`
 --
 
 INSERT INTO `captcha` (`captcha_id`, `captcha_time`, `word`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `captcha` (`captcha_id`, `captcha_time`, `word`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_album`
+-- Table structure for table `dlmbg_album`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_album` (
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_album` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
--- Dumping data untuk tabel `dlmbg_album`
+-- Dumping data for table `dlmbg_album`
 --
 
 INSERT INTO `dlmbg_album` (`id_album`, `album`) VALUES
@@ -75,28 +75,30 @@ INSERT INTO `dlmbg_album` (`id_album`, `album`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_berita`
+-- Table structure for table `dlmbg_berita`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_berita` (
   `id_berita` int(5) NOT NULL AUTO_INCREMENT,
   `judul` varchar(150) NOT NULL,
   `isi` text NOT NULL,
+  `tanggal` datetime NOT NULL,
   PRIMARY KEY (`id_berita`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=772 ;
 
 --
--- Dumping data untuk tabel `dlmbg_berita`
+-- Dumping data for table `dlmbg_berita`
 --
 
-INSERT INTO `dlmbg_berita` (`id_berita`, `judul`, `isi`) VALUES
-(2, 'AMD Umuman APU E-Series Terbaru', 'di sini ane cuma mo pamer ato lagakin hasil karya ane aje hehehehe \r\nyaitu parodinye The Avengers, ane namain The Kaskusers, charnya ane ambil dari hero2 di sono trus ane kombinasiin ama smiley kaskus kita tercinta ini '),
-(3, 'Hadir di Indonesia, Xbox 360 Slim Dibanderol Rp 3,4 Juta', 'di sini ane cuma mo pamer ato lagakin hasil karya ane aje hehehehe \r\nyaitu parodinye The Avengers, ane namain The Kaskusers, charnya ane ambil dari hero2 di sono trus ane kombinasiin ama smiley kaskus kita tercinta ini ');
+INSERT INTO `dlmbg_berita` (`id_berita`, `judul`, `isi`, `tanggal`) VALUES
+(2, 'AMD Umuman APU E-Series Terbaru', 'di sini ane cuma mo pamer ato lagakin hasil karya ane aje hehehehe \r\nyaitu parodinye The Avengers, ane namain The Kaskusers, charnya ane ambil dari hero2 di sono trus ane kombinasiin ama smiley kaskus kita tercinta ini ', '0000-00-00 00:00:00'),
+(3, 'Hadir di Indonesia, Xbox 360 Slim Dibanderol Rp 3,4 Juta', 'di sini ane cuma mo pamer ato lagakin hasil karya ane aje hehehehe \r\nyaitu parodinye The Avengers, ane namain The Kaskusers, charnya ane ambil dari hero2 di sono trus ane kombinasiin ama smiley kaskus kita tercinta ini ', '0000-00-00 00:00:00'),
+(771, 'dff', '<p>dfdf</p>', '2013-09-04 01:30:02');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_biro_wisata`
+-- Table structure for table `dlmbg_biro_wisata`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_biro_wisata` (
@@ -108,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_biro_wisata` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
--- Dumping data untuk tabel `dlmbg_biro_wisata`
+-- Dumping data for table `dlmbg_biro_wisata`
 --
 
 INSERT INTO `dlmbg_biro_wisata` (`id_biro`, `nama_biro`, `alamat`, `telepon`) VALUES
@@ -124,7 +126,7 @@ INSERT INTO `dlmbg_biro_wisata` (`id_biro`, `nama_biro`, `alamat`, `telepon`) VA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_buku_tamu`
+-- Table structure for table `dlmbg_buku_tamu`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_buku_tamu` (
@@ -137,19 +139,20 @@ CREATE TABLE IF NOT EXISTS `dlmbg_buku_tamu` (
   `email` varchar(100) NOT NULL,
   `stts` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_buku_tamu`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data untuk tabel `dlmbg_buku_tamu`
+-- Dumping data for table `dlmbg_buku_tamu`
 --
 
 INSERT INTO `dlmbg_buku_tamu` (`id_buku_tamu`, `nama`, `jk`, `asal`, `tanggal`, `pesan`, `email`, `stts`) VALUES
-(2, 'Adi Januardi', 'Pria', 'bali', '2013-06-08 05:45:37', 'ffff', 'go_blind_32@yahoo.com', 1);
+(2, 'Adi Januardi', 'Pria', 'bali', '2013-06-08 05:45:37', 'Haahhh, udah 1,5 bulan saya gak posting lagi di blog ini. Yaw biasalah, ada beberapa kesibukan akhir-akhir ini. Banyak kejadian yang saya alami 1 bulan belakangan ini. ', 'go_blind_32@yahoo.com', 1),
+(3, 'Gede Becing Becing', 'Pria', 'banyuwangi', '2013-09-04 02:33:49', 'Sebuah kekayaan belum pernah terjadi sebelumnya menampilkan bunga spektakuler ditanam tak berujung, diselingi dengan karya seni yang indah. Taman Keukenhof adalah taman terunik terkenal di dunia dan telah menjadi salah satu tujuan paling populer di Belanda. Taman ini adalah rumah bagi 7 juta tulip.', 'gedesumawijaya@gmail.com', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_contact`
+-- Table structure for table `dlmbg_contact`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_contact` (
@@ -163,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_contact` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data untuk tabel `dlmbg_contact`
+-- Dumping data for table `dlmbg_contact`
 --
 
 INSERT INTO `dlmbg_contact` (`id_contact`, `nama`, `email`, `asal`, `no_telpon`, `pesan`) VALUES
@@ -172,7 +175,7 @@ INSERT INTO `dlmbg_contact` (`id_contact`, `nama`, `email`, `asal`, `no_telpon`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_galeri`
+-- Table structure for table `dlmbg_galeri`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_galeri` (
@@ -184,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_galeri` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
--- Dumping data untuk tabel `dlmbg_galeri`
+-- Dumping data for table `dlmbg_galeri`
 --
 
 INSERT INTO `dlmbg_galeri` (`id_galeri`, `id_album`, `judul`, `gambar`) VALUES
@@ -198,7 +201,7 @@ INSERT INTO `dlmbg_galeri` (`id_galeri`, `id_album`, `judul`, `gambar`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_hotel`
+-- Table structure for table `dlmbg_hotel`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_hotel` (
@@ -212,7 +215,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_hotel` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
--- Dumping data untuk tabel `dlmbg_hotel`
+-- Dumping data for table `dlmbg_hotel`
 --
 
 INSERT INTO `dlmbg_hotel` (`id_hotel`, `nama_hotel`, `telepon`, `jml_kamar`, `alamat`, `keterangan`) VALUES
@@ -220,13 +223,13 @@ INSERT INTO `dlmbg_hotel` (`id_hotel`, `nama_hotel`, `telepon`, `jml_kamar`, `al
 (2, 'Hotel Karawang', '0333419185', '5', 'Bandung', '<p><img alt="" style="width: 160px; height: 213px;" src="/ci-wisata/asset/ckeditor/kcfinder/upload/images/1043936_3200470308452_504114592_n.jpg" /></p>'),
 (3, 'Hotel Mirah', '', '', '', ''),
 (4, 'Hotel Banyuwangi BEach', '', '', '', ''),
-(5, 'Hotel Berlian Abadi', '', '', '', ''),
+(5, 'Hotel Berlian Abadi', '', '', '', '<p><img alt="" style="width: 160px; height: 213px;" src="/ci-wisata/asset/ckeditor/kcfinder/upload/images/1043936_3200470308452_504114592_n.jpg" /></p>'),
 (6, 'Hotel Ketapang Indah', '0333419185', '10', 'Bali', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_instansi`
+-- Table structure for table `dlmbg_instansi`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_instansi` (
@@ -238,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_instansi` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
--- Dumping data untuk tabel `dlmbg_instansi`
+-- Dumping data for table `dlmbg_instansi`
 --
 
 INSERT INTO `dlmbg_instansi` (`id_instansi`, `nama_instansi`, `alamat`, `keterangan`) VALUES
@@ -251,7 +254,7 @@ INSERT INTO `dlmbg_instansi` (`id_instansi`, `nama_instansi`, `alamat`, `keteran
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_jawaban_polling`
+-- Table structure for table `dlmbg_jawaban_polling`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_jawaban_polling` (
@@ -263,7 +266,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_jawaban_polling` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
--- Dumping data untuk tabel `dlmbg_jawaban_polling`
+-- Dumping data for table `dlmbg_jawaban_polling`
 --
 
 INSERT INTO `dlmbg_jawaban_polling` (`id_jawaban_polling`, `id_polling`, `jawaban_polling`, `hit`) VALUES
@@ -274,7 +277,7 @@ INSERT INTO `dlmbg_jawaban_polling` (`id_jawaban_polling`, `id_polling`, `jawaba
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_kategori`
+-- Table structure for table `dlmbg_kategori`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_kategori` (
@@ -284,7 +287,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_kategori` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `dlmbg_kategori`
+-- Dumping data for table `dlmbg_kategori`
 --
 
 INSERT INTO `dlmbg_kategori` (`id_kategori`, `nama_kategori`) VALUES
@@ -295,7 +298,7 @@ INSERT INTO `dlmbg_kategori` (`id_kategori`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_kecamatan`
+-- Table structure for table `dlmbg_kecamatan`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_kecamatan` (
@@ -305,7 +308,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_kecamatan` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
--- Dumping data untuk tabel `dlmbg_kecamatan`
+-- Dumping data for table `dlmbg_kecamatan`
 --
 
 INSERT INTO `dlmbg_kecamatan` (`id_kecamatan`, `nama_kecamatan`) VALUES
@@ -331,7 +334,7 @@ INSERT INTO `dlmbg_kecamatan` (`id_kecamatan`, `nama_kecamatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_kelurahan`
+-- Table structure for table `dlmbg_kelurahan`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_kelurahan` (
@@ -342,7 +345,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_kelurahan` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data untuk tabel `dlmbg_kelurahan`
+-- Dumping data for table `dlmbg_kelurahan`
 --
 
 INSERT INTO `dlmbg_kelurahan` (`id_kelurahan`, `id_kecamatan`, `kelurahan`) VALUES
@@ -351,33 +354,32 @@ INSERT INTO `dlmbg_kelurahan` (`id_kelurahan`, `id_kecamatan`, `kelurahan`) VALU
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_kunjungan`
+-- Table structure for table `dlmbg_kunjungan`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_kunjungan` (
   `id_kunjungan` int(5) NOT NULL AUTO_INCREMENT,
   `id_hotel` int(5) NOT NULL,
-  `tanggal` varchar(50) NOT NULL,
-  `asal` varchar(50) NOT NULL,
-  `jk` varchar(20) NOT NULL,
-  `total` varchar(20) NOT NULL,
-  `lama_inap` varchar(20) NOT NULL,
+  `bulan` varchar(20) NOT NULL,
+  `tahun` int(4) NOT NULL,
+  `pria` int(5) NOT NULL,
+  `wanita` int(5) NOT NULL,
   PRIMARY KEY (`id_kunjungan`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
--- Dumping data untuk tabel `dlmbg_kunjungan`
+-- Dumping data for table `dlmbg_kunjungan`
 --
 
-INSERT INTO `dlmbg_kunjungan` (`id_kunjungan`, `id_hotel`, `tanggal`, `asal`, `jk`, `total`, `lama_inap`) VALUES
-(4, 4, '2013-06-01', 'bali', 'Pria', '10', '10'),
-(2, 3, '2013-06-15', 'Bandung', 'Wanita', '5', '2'),
-(3, 2, '05-05-2013', 'Denpasar', 'Pria', '5', '4');
+INSERT INTO `dlmbg_kunjungan` (`id_kunjungan`, `id_hotel`, `bulan`, `tahun`, `pria`, `wanita`) VALUES
+(4, 3, 'Januari', 2012, 10, 30),
+(2, 5, 'Maret', 2012, 30, 43),
+(3, 2, 'Februari', 2012, 42, 67);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_makanan`
+-- Table structure for table `dlmbg_makanan`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_makanan` (
@@ -388,7 +390,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_makanan` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
--- Dumping data untuk tabel `dlmbg_makanan`
+-- Dumping data for table `dlmbg_makanan`
 --
 
 INSERT INTO `dlmbg_makanan` (`id_makanan`, `nama`, `keterangan`) VALUES
@@ -405,7 +407,7 @@ INSERT INTO `dlmbg_makanan` (`id_makanan`, `nama`, `keterangan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_menu`
+-- Table structure for table `dlmbg_menu`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_menu` (
@@ -416,10 +418,10 @@ CREATE TABLE IF NOT EXISTS `dlmbg_menu` (
   `content` text NOT NULL,
   `jenis` varchar(20) NOT NULL,
   PRIMARY KEY (`id_menu`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
--- Dumping data untuk tabel `dlmbg_menu`
+-- Dumping data for table `dlmbg_menu`
 --
 
 INSERT INTO `dlmbg_menu` (`id_menu`, `id_parent`, `menu`, `url_route`, `content`, `jenis`) VALUES
@@ -446,15 +448,15 @@ INSERT INTO `dlmbg_menu` (`id_menu`, `id_parent`, `menu`, `url_route`, `content`
 (21, 4, 'Biro Perjalanan', 'web/biro', '', 'menu'),
 (22, 4, 'Instansi Penunjang Wisata', 'web/instansi', '', 'menu'),
 (23, 0, 'Berita', 'web/berita', '', 'menu'),
-(24, 0, 'Pengumuman', 'web/pengumuman', '', 'menu'),
 (25, 0, 'Profil', '', '', 'menu'),
 (26, 8, 'New Thread', 'forum/post_new', '', 'menu'),
-(27, 8, 'Sub Forum', 'forum', '', 'menu');
+(27, 8, 'Sub Forum', 'forum', '', 'menu'),
+(28, 0, 'Statistik Kunjungan', 'web/statistik', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_objek_wisata`
+-- Table structure for table `dlmbg_objek_wisata`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_objek_wisata` (
@@ -466,19 +468,20 @@ CREATE TABLE IF NOT EXISTS `dlmbg_objek_wisata` (
   `koordinat` varchar(100) NOT NULL,
   `keterangan` text NOT NULL,
   PRIMARY KEY (`id_objek_wisata`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
--- Dumping data untuk tabel `dlmbg_objek_wisata`
+-- Dumping data for table `dlmbg_objek_wisata`
 --
 
 INSERT INTO `dlmbg_objek_wisata` (`id_objek_wisata`, `id_kelurahan`, `nama_objek_wisata`, `jenis`, `alamat`, `koordinat`, `keterangan`) VALUES
+(11, 1, '', 'religi', '', '340,335,339,340,344,339,339,335', ''),
 (9, 1, 'fdfdf', 'religi', '<p>fdfdfd</p>', '567,344,570,355,577,350,567,347', '<p><img alt="" style="width: 160px; height: 213px;" src="/ci-wisata/asset/ckeditor/kcfinder/upload/images/1043936_3200470308452_504114592_n.jpg" /></p>');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_pengumuman`
+-- Table structure for table `dlmbg_pengumuman`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_pengumuman` (
@@ -489,7 +492,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_pengumuman` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=610 ;
 
 --
--- Dumping data untuk tabel `dlmbg_pengumuman`
+-- Dumping data for table `dlmbg_pengumuman`
 --
 
 INSERT INTO `dlmbg_pengumuman` (`id_pengumuman`, `judul`, `isi`) VALUES
@@ -501,7 +504,7 @@ INSERT INTO `dlmbg_pengumuman` (`id_pengumuman`, `judul`, `isi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_peta_online`
+-- Table structure for table `dlmbg_peta_online`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_peta_online` (
@@ -513,20 +516,21 @@ CREATE TABLE IF NOT EXISTS `dlmbg_peta_online` (
   `lat` double NOT NULL,
   `lang` double NOT NULL,
   PRIMARY KEY (`id_peta_online`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
--- Dumping data untuk tabel `dlmbg_peta_online`
+-- Dumping data for table `dlmbg_peta_online`
 --
 
 INSERT INTO `dlmbg_peta_online` (`id_peta_online`, `id_kelurahan`, `judul`, `jenis`, `keterangan`, `lat`, `lang`) VALUES
 (17, 1, 'fffffddddddd', 'Kawasan Bencana', 'ffffd', -6.25045901739336, 106.337871551514),
-(16, 1, 'Naskeleng', 'Sarana Kesehatan', 'bbbb', -6.25122690101504, 106.338129043579);
+(16, 1, 'Naskeleng', 'Sarana Kesehatan', 'bbbb', -6.25122690101504, 106.338129043579),
+(19, 1, 'Wisata Bahari', 'wisata', '<p>ok</p>', -8.30178263151019, 122.853755950928);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_polling`
+-- Table structure for table `dlmbg_polling`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_polling` (
@@ -537,7 +541,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_polling` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data untuk tabel `dlmbg_polling`
+-- Dumping data for table `dlmbg_polling`
 --
 
 INSERT INTO `dlmbg_polling` (`id_polling`, `soal`, `aktif`) VALUES
@@ -546,7 +550,7 @@ INSERT INTO `dlmbg_polling` (`id_polling`, `soal`, `aktif`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_reply_forum`
+-- Table structure for table `dlmbg_reply_forum`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_reply_forum` (
@@ -561,7 +565,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_reply_forum` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `dlmbg_reply_forum`
+-- Dumping data for table `dlmbg_reply_forum`
 --
 
 INSERT INTO `dlmbg_reply_forum` (`id_reply_forum`, `id_anggota`, `id_forum`, `judul`, `isi`, `tanggal`, `waktu`) VALUES
@@ -573,7 +577,7 @@ INSERT INTO `dlmbg_reply_forum` (`id_reply_forum`, `id_anggota`, `id_forum`, `ju
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_restoran`
+-- Table structure for table `dlmbg_restoran`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_restoran` (
@@ -584,7 +588,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_restoran` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
--- Dumping data untuk tabel `dlmbg_restoran`
+-- Dumping data for table `dlmbg_restoran`
 --
 
 INSERT INTO `dlmbg_restoran` (`id_restoran`, `nama`, `alamat`) VALUES
@@ -599,7 +603,7 @@ INSERT INTO `dlmbg_restoran` (`id_restoran`, `nama`, `alamat`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_sanggar`
+-- Table structure for table `dlmbg_sanggar`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_sanggar` (
@@ -612,7 +616,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_sanggar` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
--- Dumping data untuk tabel `dlmbg_sanggar`
+-- Dumping data for table `dlmbg_sanggar`
 --
 
 INSERT INTO `dlmbg_sanggar` (`id_sanggar`, `id_kelurahan`, `nama_sanggar`, `alamat`, `keterangan`) VALUES
@@ -627,7 +631,7 @@ INSERT INTO `dlmbg_sanggar` (`id_sanggar`, `id_kelurahan`, `nama_sanggar`, `alam
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_setting`
+-- Table structure for table `dlmbg_setting`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_setting` (
@@ -639,7 +643,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_setting` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
--- Dumping data untuk tabel `dlmbg_setting`
+-- Dumping data for table `dlmbg_setting`
 --
 
 INSERT INTO `dlmbg_setting` (`id_setting`, `tipe`, `title`, `content_setting`) VALUES
@@ -655,7 +659,7 @@ INSERT INTO `dlmbg_setting` (`id_setting`, `tipe`, `title`, `content_setting`) V
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_thread_forum`
+-- Table structure for table `dlmbg_thread_forum`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_thread_forum` (
@@ -672,7 +676,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_thread_forum` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `dlmbg_thread_forum`
+-- Dumping data for table `dlmbg_thread_forum`
 --
 
 INSERT INTO `dlmbg_thread_forum` (`id_forum`, `id_kategori`, `id_anggota`, `judul`, `isi`, `post_date`, `last_date`, `hitung`) VALUES
@@ -683,7 +687,7 @@ INSERT INTO `dlmbg_thread_forum` (`id_forum`, `id_kategori`, `id_anggota`, `judu
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_toko_cinderamata`
+-- Table structure for table `dlmbg_toko_cinderamata`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_toko_cinderamata` (
@@ -695,7 +699,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_toko_cinderamata` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
--- Dumping data untuk tabel `dlmbg_toko_cinderamata`
+-- Dumping data for table `dlmbg_toko_cinderamata`
 --
 
 INSERT INTO `dlmbg_toko_cinderamata` (`id_toko`, `nama_toko`, `alamat`, `keterangan`) VALUES
@@ -709,7 +713,7 @@ INSERT INTO `dlmbg_toko_cinderamata` (`id_toko`, `nama_toko`, `alamat`, `keteran
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_transportasi`
+-- Table structure for table `dlmbg_transportasi`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_transportasi` (
@@ -722,7 +726,7 @@ CREATE TABLE IF NOT EXISTS `dlmbg_transportasi` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
--- Dumping data untuk tabel `dlmbg_transportasi`
+-- Dumping data for table `dlmbg_transportasi`
 --
 
 INSERT INTO `dlmbg_transportasi` (`id_transportasi`, `jenis`, `tujuan`, `jam_berangkat`, `alamat`) VALUES
@@ -740,7 +744,7 @@ INSERT INTO `dlmbg_transportasi` (`id_transportasi`, `jenis`, `tujuan`, `jam_ber
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dlmbg_user`
+-- Table structure for table `dlmbg_user`
 --
 
 CREATE TABLE IF NOT EXISTS `dlmbg_user` (
@@ -754,16 +758,17 @@ CREATE TABLE IF NOT EXISTS `dlmbg_user` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `dlmbg_user`
+-- Dumping data for table `dlmbg_user`
 --
 
 INSERT INTO `dlmbg_user` (`kode_user`, `username`, `password`, `nama_user`, `level`, `gbr`) VALUES
-('5e7b22acc62a11e291df14da', 'admin', 'e95b101f465efc36dce45c98dfca38f0', 'Gede Lumbung', 'admin', 'b3da8da6e3b72cb6d324aa1e29b77d09.JPG');
+('5e7b22acc62a11e291df14da', 'admin', 'e95b101f465efc36dce45c98dfca38f0', 'Gede Lumbung', 'admin', 'b3da8da6e3b72cb6d324aa1e29b77d09.JPG'),
+('3bdcec3e1c8411e39cb9a4ba', 'dede', '02897a7ad1c360cb0b6e5f0c44556285', 'Dedek Haryanto', 'member', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_counter`
+-- Table structure for table `tbl_counter`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_counter` (
@@ -771,10 +776,10 @@ CREATE TABLE IF NOT EXISTS `tbl_counter` (
   `ip_address` varchar(20) NOT NULL,
   `tanggal` varchar(30) NOT NULL,
   PRIMARY KEY (`id_counter`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=40 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50 ;
 
 --
--- Dumping data untuk tabel `tbl_counter`
+-- Dumping data for table `tbl_counter`
 --
 
 INSERT INTO `tbl_counter` (`id_counter`, `ip_address`, `tanggal`) VALUES
@@ -816,4 +821,14 @@ INSERT INTO `tbl_counter` (`id_counter`, `ip_address`, `tanggal`) VALUES
 (36, '::1', '28-Jul-2013 17:57:36'),
 (37, '::1', '28-Jul-2013 18:26:56'),
 (38, '::1', '28-Jul-2013 18:27:01'),
-(39, '::1', '28-Jul-2013 18:28:02');
+(39, '::1', '28-Jul-2013 18:28:02'),
+(40, '::1', '29-Jul-2013 22:37:22'),
+(41, '::1', '02-Aug-2013 00:57:24'),
+(42, '::1', '05-Aug-2013 21:51:47'),
+(43, '::1', '18-Aug-2013 23:50:49'),
+(44, '::1', '19-Aug-2013 13:20:37'),
+(45, '::1', '04-Sep-2013 01:55:39'),
+(46, '::1', '06-Sep-2013 02:08:42'),
+(47, '::1', '06-Sep-2013 13:13:45'),
+(48, '::1', '06-Sep-2013 13:13:53'),
+(49, '::1', '13-Sep-2013 20:02:08');

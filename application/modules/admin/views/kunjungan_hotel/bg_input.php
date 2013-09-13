@@ -40,37 +40,24 @@
 								</select>
 								<div class="cleaner_h10"></div>
 								
-								<label for="tanggal">Tanggal</label>
+								<label for="tanggal">Bulan</label>
 								<div class="cleaner_h5"></div>
-								<input type="date" style="width:90%;" id="tanggal" name="tanggal" placeholder="tanggal" value="<?php echo $tanggal; ?>" />
+								<input type="search" style="width:90%;" id="bulan" name="bulan" placeholder="bulan" value="<?php echo $bulan; ?>" />
 								<div class="cleaner_h10"></div>
 								
-								<label for="jk">Jenis Kelamin</label>
+								<label for="menu">Tahun</label>
 								<div class="cleaner_h5"></div>
-								<?php
-									$l=''; $p='';
-									if($jk=="Wanita"){$l=''; $p='selected';}
-									else if($jk=="Pria"){$l='selected'; $p='';}
-								?>
-								<select name="jk">
-									<option value="Pria" <?php echo $l; ?>>Pria</option>
-									<option value="Wanita" <?php echo $p; ?>>Wanita	</option>
-								</select>
+								<input type="search" style="width:90%;" id="tahun" name="tahun" placeholder="tahun" value="<?php echo $tahun; ?>" />
 								<div class="cleaner_h10"></div>
 								
-								<label for="menu">Asal</label>
+								<label for="total">Jumlah Pria</label>
 								<div class="cleaner_h5"></div>
-								<input type="search" style="width:90%;" id="asal" name="asal" placeholder="asal" value="<?php echo $asal; ?>" />
+								<input type="search" style="width:90%;" id="pria" name="pria" placeholder="pria" value="<?php echo $pria; ?>" />
 								<div class="cleaner_h10"></div>
 								
-								<label for="total">Total</label>
+								<label for="total">Jumlah Wanita</label>
 								<div class="cleaner_h5"></div>
-								<input type="search" style="width:90%;" id="total" name="total" placeholder="total" value="<?php echo $total; ?>" />
-								<div class="cleaner_h10"></div>
-								
-								<label for="lama_inap">Lama Inap</label>
-								<div class="cleaner_h5"></div>
-								<input type="search" style="width:90%;" id="lama_inap" name="lama_inap" placeholder="lama_inap" value="<?php echo $lama_inap; ?>" />
+								<input type="search" style="width:90%;" id="wanita" name="wanita" placeholder="wanita" value="<?php echo $wanita; ?>" />
 								<div class="cleaner_h10"></div>
 								
 								<input type="hidden" name="id_param" value="<?php echo $id_param; ?>" />

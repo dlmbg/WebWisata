@@ -17,7 +17,7 @@ class App_Route extends CI_Controller {
 		}
 		else
 		{
-			redirect("user");
+			redirect("web");
 		}
 	}
 }

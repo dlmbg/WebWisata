@@ -96,22 +96,6 @@
 <div id="head-sidebar">STATISTIK KUNJUNGAN</div>
 <div id="content-sidebar">
 <ul>
-	<?php 
-    foreach($kunjungan->result_array() as $b)
-    {
-      echo '<li>'.$b['nama_hotel'].' ('.$b['hasil'].')</li>';
-    }
-  ?>
-</ul>
-</div>
-</div>
-
-<div class="cleaner_h20"></div>	
-
-<div id="bg-sidebar">
-<div id="head-sidebar">STATISTIK KUNJUNGAN</div>
-<div id="content-sidebar">
-<ul>
     <li class="konten-kiri-li">Dikunjungi oleh : <b><?php echo $counter_pengunjung; ?> user</b></li>
     <li class="konten-kiri-li">Browser : <b><?php echo $browser; ?></b></li>
     <li class="konten-kiri-li">OS : <b><?php echo $os; ?></b></li>

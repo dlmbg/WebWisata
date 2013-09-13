@@ -53,7 +53,6 @@
 				<li><a href="<?php echo base_url(); ?>admin/contact"><i class="icon icon-th-list"></i> <span>Contact</span></a></li>
 				<li><a href="<?php echo base_url(); ?>admin/polling"><i class="icon icon-th-list"></i> <span>Polling</span></a></li>
 				<li><a href="<?php echo base_url(); ?>admin/objek_wisata"><i class="icon icon-th-list"></i> <span>Objek Wisata</span></a></li>
-				<li><a href="<?php echo base_url(); ?>admin/pengumuman"><i class="icon icon-th-list"></i> <span>Pengumuman</span></a></li>
 				<li><a href="<?php echo base_url(); ?>admin/peta_online"><i class="icon icon-th-list"></i> <span>Peta Online</span></a></li>
 				<li><a href="<?php echo base_url(); ?>admin/transportasi"><i class="icon icon-th-list"></i> <span>Transportasi</span></a></li>
 			</ul>

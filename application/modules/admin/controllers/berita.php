@@ -80,6 +80,7 @@ class berita extends CI_Controller {
 				$this->db->set('id_berita',"REPLACE(UUID(),'-','')",FALSE); 
 				$this->db->set('judul',$this->input->post("judul"));
 				$this->db->set('isi',$this->input->post("isi"));
+				$this->db->set('tanggal','now()',FALSE);
 				$this->db->insert("dlmbg_berita");
 				
 			}

@@ -166,22 +166,5 @@
 </div>
 </div>
 
-<div class="cleaner_h20"></div>	
-
-<div id="bg-sidebar">
-<div id="head-sidebar">PENGUMUMAN</div>
-<div id="content-sidebar">
-<ul>
-  <?php 
-    $get = $this->db->order_by("id_pengumuman","DESC")->get("dlmbg_pengumuman",3,0);
-    foreach($get->result() as $b)
-    {
-      echo '<li><a href="'.base_url().'web/pengumuman/detail/'.$b->id_pengumuman.'">'.$b->judul.'</a></li>';
-    }
-  ?>
-</ul>
-</div>
-</div>
-
 
 </div>

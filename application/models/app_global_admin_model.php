@@ -76,19 +76,26 @@ class app_global_admin_model extends CI_Model {
 					<tr>
 					<th>No.</th>
 					<th>Nama Hotel</th>
-					<th>Tanggal Kunjungan</th>
-					<th>Asal</th>
+					<th>Bulan</th>
+					<th>Tahun</th>
+					<th>Pria</th>
+					<th>Wanita</th>
+					<th>Total</th>
 					<th width='160'><a href='".base_url()."admin/kunjungan_hotel/tambah' class='btn btn-small btn-success'><i class='icon-plus-sign'></i> Tambah Data</a></th>
 					</tr>
 					</thead>";
 		$i = $offset+1;
 		foreach($w->result() as $h)
 		{
+			$total = $h->wanita+$h->pria;
 			$hasil .= "<tr>
 					<td>".$i."</td>
 					<td>".$h->nama_hotel."</td>
-					<td>".$h->tanggal."</td>
-					<td>".$h->asal."</td>
+					<td>".$h->bulan."</td>
+					<td>".$h->tahun."</td>
+					<td>".$h->pria."</td>
+					<td>".$h->wanita."</td>
+					<td>".$total."</td>
 					<td>";
 			$hasil .= "<a href='".base_url()."admin/kunjungan_hotel/edit/".$h->id_kunjungan."' class='btn btn-small btn-inverse'><i class='icon-edit'></i> Edit</a> ";
 			$hasil .= "<a href='".base_url()."admin/kunjungan_hotel/hapus/".$h->id_kunjungan."' onClick=\"return confirm('Are you sure?');\" class='btn btn-small btn-danger'><i class='icon-trash'></i> Hapus</a></td>

@@ -81,14 +81,15 @@
     }
 </style>
 
+        <a href="http://localhost/web-gis/app_front_peta_bencana/zoom" id="boxshow" class="iframe">Zoom Peta</a>
     <div class="europe_map">
-        <img src="<?php echo base_url(); ?>asset/images/peta_kecil.jpg" alt="" width="1920" height="1536" />
+        <img src="<?php echo base_url(); ?>asset/images/peta_kecil.jpg" alt="" width="1920" height="1855" />
         <?php
             foreach ($dt->result_array() as $d) {
                 $hasil = explode(",",$d['koordinat']);
         ?>
 
-        <div class="point" id="p-<?php echo $hasil[0]*2; ?>-<?php echo $hasil[1]*2; ?>">
+        <div class="point" id="p-<?php echo $hasil[0]*2+30; ?>-<?php echo $hasil[1]*2; ?>">
             <h3><?php echo $d['kelurahan']; ?> - <?php echo $d['nama_objek_wisata']; ?></h3>
             <p><b><?php echo $d['nama_objek_wisata']; ?></b></p>
             <p><b>Jenis : <?php echo $d['jenis']; ?></b></p>
@@ -113,7 +114,7 @@
                     {
                         $hasil = explode(",",$d['koordinat']);
                         ?>
-                        <li><a href="#" rel="p-<?php echo $hasil[0]*2; ?>-<?php echo $hasil[1]*2; ?>"><?php echo $d['kelurahan'].' - '.$d['nama_objek_wisata']; ?></a></li>
+                        <li><a href="#" rel="p-<?php echo $hasil[0]*2+30; ?>-<?php echo $hasil[1]*2; ?>"><?php echo $d['kelurahan'].' - '.$d['nama_objek_wisata']; ?></a></li>
                         <?php
                     }
                 ?>

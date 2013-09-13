@@ -37,6 +37,11 @@ class peta extends CI_Controller {
  		$this->load->view($GLOBALS['site_theme'].'/web/bg_footer');
 	}
 	 
+	public function zoom()
+	{
+ 		$this->load->view($GLOBALS['site_theme'].'/web/peta/zoom');
+	}
+	 
 	public function ambil_data($akhir)
 	{
 		if($akhir==1){
